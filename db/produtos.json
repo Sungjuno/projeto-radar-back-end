@@ -1,1 +1,18 @@
-[{"id":1669667126627,"nome":"qqqq","descricao":"qqq","valor":1231,"qtdEstoque":243432},{"id":1669766670591,"nome":"zzzz","descricao":"dfgdfgdd","valor":33453,"qtdEstoque":4564}]
+
+[
+    {
+        "id": 1669831538246,
+        "nome": "PS5",
+        "descricao": "Um videogame de ultima geração",
+        "valor": 5000,
+        "qtd_estoque": 450
+    },
+    {
+        "id": 1669831567723,
+        "nome": "XBOX serie X",
+        "descricao": "Um videogame de ultima geração e preto",
+        "valor": 4500,
+        "qtd_estoque": 150
+    }
+]
+

@@ -1,5 +1,5 @@
 module.exports = class Cliente {
-    constructor(cliente){
+    constructor(cliente) {
         this.id = cliente?.id
         this.nome = cliente?.nome
         this.telefone = cliente?.telefone
@@ -14,24 +14,24 @@ module.exports = class Cliente {
         this.complemento = cliente?.complemento
     }
 
-    // metodos staticos
-    static async apagarPorId(id){
+
+    static async apagarPorId(id) {
         const listaClientes = await this.lista()
         const listaNova = []
-        for(let i=0; i<listaClientes.length; i++){
+        for (let i = 0; i < listaClientes.length; i++) {
             const clienteDb = listaClientes[i]
-            if(clienteDb.id.toString() !== id.toString()){
+            if (clienteDb.id.toString() !== id.toString()) {
                 listaNova.push(clienteDb)
             }
         }
         Cliente.salvarJsonDisco(listaNova)
     }
     
-    static async buscaPorId(id){
+    static async buscaPorId(id) {
         const listaClientes = await this.lista()
-        for(let i=0; i<listaClientes.length; i++){
+        for (let i = 0; i < listaClientes.length; i++) {
             const clienteDb = listaClientes[i]
-            if(clienteDb.id.toString() === id.toString()){
+            if (clienteDb.id.toString() === id.toString()) {
                 return clienteDb
             }
         }
@@ -39,12 +39,12 @@ module.exports = class Cliente {
         return null
     }
 
-    static async salvar(cliente){
+    static async salvar(cliente) {
         const listaClientes = await this.lista()
         let exist = false
-        for(let i=0; i<listaClientes.length; i++){
+        for (let i = 0; i < listaClientes.length; i++) {
             const clienteDb = listaClientes[i]
-            if(clienteDb.id.toString() === cliente.id.toString()){
+            if (clienteDb.id.toString() === cliente.id.toString()) {
                 clienteDb.nome = cliente.nome
                 clienteDb.telefone = cliente.telefone
                 clienteDb.email = cliente.email
@@ -52,7 +52,7 @@ module.exports = class Cliente {
                 clienteDb.cep = cliente.cep
                 clienteDb.logradouro = cliente.logradouro
                 clienteDb.numero = cliente.numero
-                clienteDb.bairro = cliente.bairoo
+                clienteDb.bairro = cliente.bairro
                 clienteDb.cidade = cliente.cidade
                 clienteDb.estado = cliente.estado
                 clienteDb.complemento = cliente.complemento
@@ -61,25 +61,25 @@ module.exports = class Cliente {
             }
         }
 
-        if(!exist){
-            const objectLiteral = {...cliente}
+        if (!exist) {
+            const objectLiteral = { ...cliente }
             listaClientes.push(objectLiteral)
         }
 
         Cliente.salvarJsonDisco(listaClientes)
     }
 
-    static async salvarJsonDisco(clientes){
+    static async salvarJsonDisco(clientes) {
         const fs = require('fs');
 
         try {
-            fs.writeFileSync('db/clientes.json', JSON.stringify(clientes), {encoding: "utf8"});
+            fs.writeFileSync('db/clientes.json', JSON.stringify(clientes), { encoding: "utf8" });
         } catch (err) {
             console.error(err);
         }
     }
 
-    static async lista(){
+    static async lista() {
         let clientes = []
         const fs = require('fs');
 
@@ -89,7 +89,7 @@ module.exports = class Cliente {
         } catch (err) {
             console.error(err);
         }
-        
+
         return clientes
     }
 }
