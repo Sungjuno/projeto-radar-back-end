@@ -2,12 +2,17 @@ module.exports = class Cliente {
     constructor(cliente){
         this.id = cliente?.id
         this.nome = cliente?.nome
-        this.cpf = cliente?.cpf
         this.telefone = cliente?.telefone
-        this.endereco = cliente?.endereco
-        this.valor = cliente?.valor
+        this.email = cliente?.email
+        this.cpf = cliente?.cpf
+        this.cep = cliente?.cep
+        this.logradouro = cliente?.logradouro
+        this.numero = cliente?.numero
+        this.bairro = cliente?.bairro
+        this.cidade = cliente?.cidade
+        this.estado = cliente?.estado
+        this.complemento = cliente?.complemento
     }
-
 
     // metodos staticos
     static async apagarPorId(id){
@@ -19,7 +24,6 @@ module.exports = class Cliente {
                 listaNova.push(clienteDb)
             }
         }
-
         Cliente.salvarJsonDisco(listaNova)
     }
     
@@ -42,10 +46,16 @@ module.exports = class Cliente {
             const clienteDb = listaClientes[i]
             if(clienteDb.id.toString() === cliente.id.toString()){
                 clienteDb.nome = cliente.nome
-                clienteDb.cpf = cliente.cpf
-                clienteDb.endereco = cliente.endereco
                 clienteDb.telefone = cliente.telefone
-                clienteDb.valor = cliente.valor
+                clienteDb.email = cliente.email
+                clienteDb.cpf = cliente.cpf
+                clienteDb.cep = cliente.cep
+                clienteDb.logradouro = cliente.logradouro
+                clienteDb.numero = cliente.numero
+                clienteDb.bairro = cliente.bairoo
+                clienteDb.cidade = cliente.cidade
+                clienteDb.estado = cliente.estado
+                clienteDb.complemento = cliente.complemento
                 exist = true
                 break
             }
@@ -74,7 +84,7 @@ module.exports = class Cliente {
         const fs = require('fs');
 
         try {
-            const jsonClientes = await fs.readFileSync('db/clientes.json', 'utf8');
+            const jsonClientes = fs.readFileSync('db/clientes.json', 'utf8');
             clientes = JSON.parse(jsonClientes)
         } catch (err) {
             console.error(err);

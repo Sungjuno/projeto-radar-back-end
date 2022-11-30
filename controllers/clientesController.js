@@ -9,6 +9,7 @@ module.exports = {
         const cliente = new Cliente(req.body)
         cliente.id = new Date().getTime()
         Cliente.salvar(cliente)
+        console.log(cliente)
         res.status(201).send(cliente)
     },
     delete: (req, res, next) => {
