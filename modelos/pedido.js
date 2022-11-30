@@ -37,9 +37,9 @@ module.exports = class Pedido {
         for (let i = 0; i < listaPedidos.length; i++) {
             const pedidosDb = listaPedidos[i]
             if (pedidosDb.id.toString() === pedido.id.toString()) {
-                pedidosDb.cliente_id = pedido.nome
-                pedidosDb.valor_total = pedido.telefone
-                pedidosDb.data = pedido.email
+                pedidosDb.cliente_id = pedido.cliente_id
+                pedidosDb.valor_total = pedido.valor_total
+                pedidosDb.data = pedido.data
                 exist = true
                 break
             }

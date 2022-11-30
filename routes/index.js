@@ -1,8 +1,11 @@
 const express = require('express');
 const router = express.Router();
+
+//imports dos Controllers
 const ClientesController = require("../controllers/clientesController")
 const ProdutosController = require("../controllers/produtosController")
 const PedidosController = require("../controllers/pedidosController")
+const PedidosProdutosController = require("../controllers/pedidosProdutosController")
 
 //rotas clientes
 router.get('/clientes', ClientesController.index);
@@ -25,7 +28,12 @@ router.get('/pedidos/:id', PedidosController.show);
 router.delete('/pedidos/:id', PedidosController.delete);
 router.put('/pedidos/:id', PedidosController.update);
 
-
+//rotas pedidosProdutos
+router.get('/pedidosProdutos', PedidosProdutosController.index);
+router.post('/pedidosProdutos', PedidosProdutosController.create);
+router.get('/pedidosProdutos/:id', PedidosProdutosController.show);
+router.delete('/pedidosProdutos/:id', PedidosProdutosController.delete);
+router.put('/pedidosProdutos/:id', PedidosProdutosController.update);
 
 
 module.exports = router;
