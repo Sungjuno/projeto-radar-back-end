@@ -1,16 +1,1 @@
-[
-    {
-        "id": 1669831538246,
-        "nome": "PS5",
-        "descricao": "Um videogame de ultima geração",
-        "valor": 5000,
-        "qtd_estoque": 450
-    },
-    {
-        "id": 1669831567723,
-        "nome": "XBOX serie X",
-        "descricao": "Um videogame de ultima geração e preto",
-        "valor": 4500,
-        "qtd_estoque": 150
-    }
-]
+[{"id":1670178007227,"nome":"Dipirona","descricao":"Medicamento utilizado principalmente como analgésico e antipirético.","valor":2.99,"qtd_estoque":3000},{"id":1670192186731,"nome":"Gogumelo do Mario","descricao":"crescimento e vitalidade","valor":50,"qtd_estoque":300},{"id":1670194310699,"nome":"Estrela do Mario","descricao":"Imortalidade por alguns segundos","valor":10000,"qtd_estoque":30},{"id":1670242404440,"nome":"Poção de Vida","descricao":"recupera Hp perdido","valor":30,"qtd_estoque":8000}]
