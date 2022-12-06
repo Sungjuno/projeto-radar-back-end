@@ -1,8 +1,7 @@
 # API - Projeto Radar
 
-<div align="center">
-  <a src="https://github.com/Sungjuno/projeto-radar">Repositório do Projeto Radar - Front End</a>
-</div>
+[Repositório do Projeto Radar - Front End](https://github.com/Sungjuno/projeto-radar)
+
 
 ## Instruções
 ```shell
